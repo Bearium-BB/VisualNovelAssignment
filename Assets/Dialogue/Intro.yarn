@@ -1,0 +1,20 @@
+﻿
+title: Start
+---
+Narrator: Choose a path.
+
+-> Left
+    <<jump LeftPath>>
+-> Right
+    <<jump RightPath>>
+===
+
+title: LeftPath
+---
+Narrator: You chose the left path.
+===
+
+title: RightPath
+---
+Narrator: You chose the right path.
+===
