@@ -1,11 +1,11 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UIWorldDropItem : MonoBehaviour, IDragable
+public class UIWorldDropItemInventory : MonoBehaviour,IDragable
 {
     [SerializeField] LayerMask dropMask = 0;
     [SerializeField] bool snapBackAfterDrop = true;
+    Item item;
 
     Camera cam;
     Vector3 startPos;
@@ -45,6 +45,11 @@ public class UIWorldDropItem : MonoBehaviour, IDragable
         Debug.Log($"Dropped {name} on {target.name} at {worldPoint}");
 
         // Notify the target if it implements IDropTarget
-        target.GetComponentInParent<IDropTarget>()?.OnDropped(this, worldPoint);
+        target.GetComponentInParent<IDropTarget>()?.OnDropped(item, worldPoint);
+    }
+
+    public void SetItem(Item newItem)
+    {
+        item = newItem;
     }
 }

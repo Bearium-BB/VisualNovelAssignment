@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class ExampleDropTarget : MonoBehaviour, IDropTarget
 {
-    // This method is called when a draggable item is dropped on this drop target.
-    public void OnDropped(UIWorldDropItem item, Vector3 worldPoint)
+    [SerializeField] string neededItemName;
+    public void OnDropped(Item item, Vector3 worldPoint)
     {
-        Debug.Log($"{name} received {item.name}");
+
+        if (item.itemSO.GetItemName() == neededItemName)
+        {
+            Debug.Log($"{name} received the correct item: {item.itemSO.GetItemName()}");
+            GameplayGameManager.instance.inventoryPresenter.Remove(item);
+        }
     }
 }

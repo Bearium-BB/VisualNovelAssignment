@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd990bd66d87de44196d389fbd488787, type: 3}
+  m_Name: Card_clubs_10
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: Clubs10
+  sprite: {fileID: -2020352641509245658, guid: b50a0b4414bf3dc4197714cda83d2a7c, type: 3}

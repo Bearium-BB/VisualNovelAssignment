@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IDropTarget
 {
-    void OnDropped(UIWorldDropItem item, Vector3 worldPoint);
+    void OnDropped(Item item, Vector3 worldPoint);
 }
