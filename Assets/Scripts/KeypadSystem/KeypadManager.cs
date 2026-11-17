@@ -33,7 +33,6 @@ public class KeypadManager : MonoBehaviour
         if (TextBox.text.Length == 4)
         {
             Debug.Log(TextBox.text.Length);
-
             onCorrectCodeEntered.Invoke();
         }
     }
