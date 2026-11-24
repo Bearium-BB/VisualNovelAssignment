@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+
 public class PlayerPickUpController : MonoBehaviour
 {
     [SerializeField] Camera cam;
