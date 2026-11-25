@@ -23,6 +23,7 @@ public class Portraits : MonoBehaviour
     {
         Sprite spriteFound = null;
 
+        //Looks for the sprite based off its name. Not its file name, it's "SRRITE" name. 
         foreach (Sprite sprite in sprites)
         {
             if (sprite.name == spriteName)
@@ -31,6 +32,7 @@ public class Portraits : MonoBehaviour
             }
         }
 
+        //Sets the direction based off left or right. 
         if (side == "left")
         {
             SetImage(leftImage, spriteFound);
