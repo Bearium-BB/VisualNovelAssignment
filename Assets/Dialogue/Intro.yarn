@@ -1,7 +1,9 @@
 ﻿
 title: Start
 ---
+<<portrait left card_clubs_02_0>>
 Narrator: Choose a path.
+<<hide_portraits>>
 
 -> Left
     <<jump LeftPath>>
@@ -11,10 +13,18 @@ Narrator: Choose a path.
 
 title: LeftPath
 ---
+<<hide_portraits>>
+<<portrait right card_clubs_02_0>>
 Narrator: You chose the left path.
+<<hide_portraits>>
 ===
 
 title: RightPath
 ---
+<<hide_portraits>>
+<<portrait left card_clubs_02_0>>
+<<portrait right card_clubs_02_0>>
 Narrator: You chose the right path.
+<<hide_portraits>>
+
 ===
