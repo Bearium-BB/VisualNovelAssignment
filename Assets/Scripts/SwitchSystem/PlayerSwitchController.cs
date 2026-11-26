@@ -23,6 +23,7 @@ public class PlayerSwitchController : MonoBehaviour
 
     void OnClick(InputAction.CallbackContext context)
     {
+        if (GameplayGameManager.instance != null && GameplayGameManager.instance.isBlocking) return;
 
         // Check if the click is over a UI element
         Vector2 screenPos = controls.UI.Point.ReadValue<Vector2>();

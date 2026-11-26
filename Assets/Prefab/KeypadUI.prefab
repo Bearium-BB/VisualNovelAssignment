@@ -2374,7 +2374,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6311055989814348741}
         m_TargetAssemblyTypeName: KeypadManager, Assembly-CSharp
-        m_MethodName: ClearTextBox
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3584,6 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db53a15cc734ca43a37234b3cdaa685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeypadManager
+  keypadPanel: {fileID: 7801440755770248262}
   TextBox: {fileID: 4395433618148536543}
   correctCode: 1234
   onCorrectCodeEntered:

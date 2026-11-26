@@ -38,6 +38,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (GameplayGameManager.instance != null && GameplayGameManager.instance.isBlocking) return;
+
         float newX = Mathf.Clamp(transform.position.x + movement.x * Time.deltaTime * speed, minX, maxX);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
     }

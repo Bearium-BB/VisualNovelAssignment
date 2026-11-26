@@ -27,13 +27,15 @@ public class PlayerDragController : MonoBehaviour
 
     void Update()
     {
+
+
         Vector2 screenPos = controls.UI.Point.ReadValue<Vector2>();
         InputAction click = controls.UI.Click;
 
         //We'll try to pick something up if the mouse was pressed. 
-        if (click.WasPressedThisFrame())
+        if (click.WasPressedThisFrame() && !(GameplayGameManager.instance != null && GameplayGameManager.instance.isBlocking))
             TryPickUp(screenPos);
-        
+
         //If we're currently dragging something, we'll update its position.
         if (current != null && click.IsPressed() && TryGetDragPoint(screenPos, out Vector3 pos))
             current.OnDrag(pos);

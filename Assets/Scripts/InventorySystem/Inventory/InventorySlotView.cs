@@ -8,6 +8,7 @@ public class InventorySlotView : MonoBehaviour
     [SerializeField] Image iconImage;
     [SerializeField] TMP_Text nameLabel;
     [SerializeField] UIWorldDropItemInventory dragable;
+    [SerializeField] TMP_Text descriptionLabel;
 
     public Item Item { get; private set; }
 
@@ -18,6 +19,7 @@ public class InventorySlotView : MonoBehaviour
         iconImage.sprite = item.itemSO.GetSprite();
         iconImage.enabled = item.itemSO.GetSprite() != null;
         if (nameLabel != null) nameLabel.text = item.itemSO.GetItemName();
+        if (descriptionLabel != null) descriptionLabel.text = item.itemSO.GetDescription();
         if (dragable != null) dragable.SetItem(item);
     }
 }

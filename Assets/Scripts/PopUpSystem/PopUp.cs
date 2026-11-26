@@ -13,7 +13,8 @@ public class PopUp : MonoBehaviour
 
     public void OnClick()
     {
-        parentForPopUp.SetActive(true);
+        if (!GameplayGameManager.instance.TryOpen(parentForPopUp)) return;
+
         parentImage.sprite = popUpSprite;
         OnPopUp.Invoke();
     }

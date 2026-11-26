@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Clubs2
   sprite: {fileID: 6474192781578853444, guid: b1c5cdf3672be1d48b10514ab6c91aaf, type: 3}
+  itemDescription: Its a key.Use it on the door.

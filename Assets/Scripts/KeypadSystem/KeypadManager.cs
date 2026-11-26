@@ -1,14 +1,15 @@
-using Mono.Cecil.Cil;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class KeypadManager : MonoBehaviour
 {
+    public GameObject keypadPanel;
     public TextMeshProUGUI TextBox;
     public string correctCode = "1234";
     public UnityEvent onCorrectCodeEntered;
     public UnityEvent onIncorrectCodeEntered;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,5 +50,16 @@ public class KeypadManager : MonoBehaviour
     public void ClearTextBox()
     {
         TextBox.text = "";
+    }
+
+    public void Open()
+    {
+        if (GameplayGameManager.instance.TryOpen(keypadPanel))
+            ClearTextBox();
+    }
+
+    public void Close()
+    {
+        GameplayGameManager.instance.Close(keypadPanel);
     }
 }

@@ -10,7 +10,10 @@ public class PlayerPickUpController : MonoBehaviour
 
     InputSystem_Actions controls;
 
-    void Awake() => controls = new InputSystem_Actions();
+    void Awake()
+    {
+        controls = new InputSystem_Actions();
+    }
 
     void OnEnable()
     {
@@ -26,6 +29,8 @@ public class PlayerPickUpController : MonoBehaviour
 
     void OnClick(InputAction.CallbackContext context)
     {
+        if (GameplayGameManager.instance != null && GameplayGameManager.instance.isBlocking) return;
+
         // Check if the click is over a UI element
         Vector2 screenPos = controls.UI.Point.ReadValue<Vector2>();
         Ray ray = cam.ScreenPointToRay(screenPos);
