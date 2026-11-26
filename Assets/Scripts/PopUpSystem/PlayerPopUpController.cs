@@ -7,7 +7,10 @@ public class PlayerPopUpController : MonoBehaviour
 
     InputSystem_Actions controls;
 
-    void Awake() => controls = new InputSystem_Actions();
+    void Awake() 
+    { 
+        controls = new InputSystem_Actions(); 
+    }
 
     void OnEnable()
     {

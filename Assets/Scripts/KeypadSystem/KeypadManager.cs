@@ -1,5 +1,6 @@
-using UnityEngine;
+using Mono.Cecil.Cil;
 using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class KeypadManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class KeypadManager : MonoBehaviour
     public TextMeshProUGUI TextBox;
     public string correctCode = "1234";
     public UnityEvent onCorrectCodeEntered;
+    public UnityEvent onIncorrectCodeEntered;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,19 +23,26 @@ public class KeypadManager : MonoBehaviour
 
     public void AddTextBox(string text)
     {
-        if (TextBox.text.Length >= 4)
+        if (TextBox.text.Length == 4)
         {
             ClearTextBox();
-            onCorrectCodeEntered.Invoke();
         }
-
-        TextBox.text += text;
+        else
+        {
+            TextBox.text += text;
+        }
 
 
         if (TextBox.text.Length == 4)
         {
-            Debug.Log(TextBox.text.Length);
-            onCorrectCodeEntered.Invoke();
+            if (TextBox.text == correctCode)
+            {
+                onCorrectCodeEntered.Invoke();
+            }
+            else
+            {
+                onIncorrectCodeEntered.Invoke();
+            }
         }
     }
 

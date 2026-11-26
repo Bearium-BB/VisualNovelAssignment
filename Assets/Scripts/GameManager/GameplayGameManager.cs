@@ -6,7 +6,7 @@ public class GameplayGameManager : MonoBehaviour
 
     
     public InventoryPresenter inventoryPresenter;
-
+    public RemembranceSystem remembranceSystem;
     void Awake()
     {
         if (instance != null && instance != this)
